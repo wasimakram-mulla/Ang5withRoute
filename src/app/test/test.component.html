@@ -1,0 +1,23 @@
+<div class="container">
+  <br/>
+  <h3 class="text-center text-primary">Users List</h3>
+  <br/>
+  <div class="progress" *ngIf=!users>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Loading data please wait...</div>
+  </div>
+  <div *ngFor="let user of users">
+    <div class="card text-center">
+      <div class="card-header">
+        <strong>{{user.name}}</strong>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{user.phone}}</h5>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text"><strong>Address: </strong> {{user.address.street}}, {{user.address.suite}} {{user.address.city}} - {{user.address.zipcode}}.</p>
+        <p class="card-text"><strong>Company: </strong> {{user.company.name}}</p>
+        <a href="javascript:void(0)" class="btn btn-primary" (click)="seeUserPost(user)">See posts</a>
+      </div>
+    </div>
+    <br/>
+  </div>
+</div>

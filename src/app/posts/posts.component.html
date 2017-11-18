@@ -1,0 +1,20 @@
+<div class="container">
+    <br/>
+    <h5 class="text-right"><a routerLink="/home" routerLinkActive="active">Back to HOME</a></h5>
+    <h3 class="text-center text-primary">Posts</h3>
+    <br/>
+    <div class="progress" *ngIf=!posts>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Loading data please wait...</div>
+    </div>
+    <div *ngFor="let post of posts">
+      <div class="card text-center">
+        <div class="card-header">
+          <strong>{{post.title}}</strong>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post.body}}</h5>
+        </div>
+      </div>
+      <br/>
+    </div>
+  </div>
